@@ -9,15 +9,9 @@ describe 'Vote' do
   end
 
   it 'says hello voter' do
-  # def test_it_says_hello_voter
     get '/'
     expect(last_response).to be_ok
-    expect(last_response.body).to include('Hello, voter!')
+    expect(last_response.body).to include('What"s for dinner?')
   end
-
-  # def test_it_says_hello_to_a_person
-  #   get '/', :name => 'Simon'
-  #   assert last_response.body.include?('Simon')
-  # end
 
 end
