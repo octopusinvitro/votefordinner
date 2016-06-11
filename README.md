@@ -4,10 +4,6 @@
 
 # Readme
 
-Update badges with your user and repo names.
-
-Update travis by turning your project repo ON.
-
 Explain your project here.
 
 
@@ -72,6 +68,19 @@ Then just type:
 ```bash
 $ bin/app
 ```
+
+Open your browser and go to http://localhost:4567/
+
+
+## Another way of running it
+
+Update the `config.ru` file, then type
+
+```bash
+$ rackup
+```
+
+Open your browser and go to http://localhost:9292/
 
 
 ## License
