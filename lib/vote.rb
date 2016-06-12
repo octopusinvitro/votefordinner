@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'yaml/store'
 
 class Vote < Sinatra::Base
 
@@ -19,12 +20,21 @@ class Vote < Sinatra::Base
   post '/cast' do
     @title = 'Thanks for casting your vote!'
     @vote  = params['vote']
+
+    @store = YAML::Store.new 'votes.yml'
+    @store.transaction do
+      @store['votes'] ||= {}
+      @store['votes'][@vote] ||= 0
+      @store['votes'][@vote] += 1
+    end
+
     erb :cast
   end
 
   get '/results' do
     @title = 'Results so far:'
-    @votes = { 'HAM' => 7, 'PIZ' => 5, 'CUR' => 3 }
+    @store = YAML::Store.new 'votes.yml'
+    @votes = @store.transaction { @store['votes'] }
     erb :results
   end
   # get '/assets' do
