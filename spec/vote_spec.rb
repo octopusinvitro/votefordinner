@@ -19,4 +19,11 @@ describe 'Vote' do
     expect(last_response.body).to include('<h1>Welcome to the Suffragist!</h1>')
   end
 
+  it 'adds the possibility to POST  results' do
+    post '/cast', :vote => 'HAM'
+    expect(last_response).to be_ok
+    expect(last_response.body).to include('Thanks for casting your vote!')
+    expect(last_response.body).to include('Hamburger')
+  end
+
 end

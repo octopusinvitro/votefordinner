@@ -16,4 +16,10 @@ class Vote < Sinatra::Base
     erb :index
   end
 
+  post '/cast' do
+    @title = 'Thanks for casting your vote!'
+    @vote  = params['vote']
+    erb :cast
+  end
+
 end
