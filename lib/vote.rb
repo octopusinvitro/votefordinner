@@ -22,4 +22,13 @@ class Vote < Sinatra::Base
     erb :cast
   end
 
+  get '/results' do
+    @title = 'Results so far:'
+    @votes = { 'HAM' => 7, 'PIZ' => 5, 'CUR' => 3 }
+    erb :results
+  end
+  # get '/assets' do
+  #   run VoteAssets.environment Sinatra::Application.settings.root
+  # end
+
 end
