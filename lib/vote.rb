@@ -12,6 +12,7 @@ class Vote < Sinatra::Base
   }
 
   get '/' do
+    @title = 'Welcome to the Suffragist!'
     erb :index
   end
 
