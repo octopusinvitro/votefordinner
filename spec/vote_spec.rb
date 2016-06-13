@@ -1,30 +1,30 @@
-require 'vote'
+require "vote"
 
-describe 'Vote' do
+describe "Vote" do
   def app
     Vote.new
   end
 
-  it 'uses template in the main title' do
-    get '/'
+  it "uses template in the main title" do
+    get "/"
     expect(last_response).to be_ok
     expect_titles(Messages::MAIN_TITLE)
   end
 
-  it 'adds the possibility to POST  results' do
-    post '/cast', :vote => 'HAM'
+  it "adds the possibility to POST  results" do
+    post "/cast", :vote => "HAM"
     expect(last_response).to be_ok
     expect_titles(Messages::CAST_TITLE)
-    expect(last_response.body).to include('Hamburger')
+    expect(last_response.body).to include("Hamburger")
   end
 
-  it 'adds the results route and the results view' do
-    get '/results'
+  it "adds the results route and the results view" do
+    get "/results"
     expect(last_response).to be_ok
     expect_titles(Messages::RESULTS_TITLE)
-    expect(last_response.body).to include('<th>Curry</th>')
-    # expect(last_response.body).to include('<td>3</td>')
-    # expect(last_response.body).to include('<td>###</td>')
+    expect(last_response.body).to include("<th>Curry</th>")
+    # expect(last_response.body).to include("<td>3</td>")
+    # expect(last_response.body).to include("<td>###</td>")
   end
 
   def expect_titles(title)
