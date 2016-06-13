@@ -4,7 +4,7 @@
 
 # Readme
 
-Explain your project here.
+A project to play with Sinatra.
 
 
 ## How to use this project
@@ -55,6 +55,12 @@ $ bundle exec rspec --color
 ```
 
 
+### Another way of running them
+
+```bash
+$ bundle exec rake
+```
+
 ### To run the app
 
 Make sure that the `bin/app` file has execution permissions:
@@ -72,7 +78,7 @@ $ bin/app
 Open your browser and go to http://localhost:4567/
 
 
-## Another way of running it
+### Another way of running it
 
 Update the `config.ru` file, then type
 
@@ -81,6 +87,19 @@ $ rackup
 ```
 
 Open your browser and go to http://localhost:9292/
+
+
+## Comments
+
+* I don't know if this is a good practice, but I am moving all the requires to the `bin/app` file (and the `config.ru` file, in case you use that to run the app).
+Then, to make it work for the tests, I also put them in the `spec/spec_helper`.
+I think it is clearer and more explicit that having to search for requires inside files and maybe end up with duplication (like requiring the same file in different files, etc.)
+
+* I have to add the modules in the `config.ru` with `extend` because `include` throws an error. It works in `bin/app`, though.
+
+* The assets module has to be included inside of a class or it won't work. That's because of the `included` method, which takes the class as an argument.
+
+* All the texts are in a `lib/messages.rb` file. Maybe that make it easier for translations? Also separates the strings from the business logic.
 
 
 ## License
