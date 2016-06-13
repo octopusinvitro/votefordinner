@@ -11,17 +11,17 @@ describe "VoteAssets" do
   end
 
   it "loads reset stylesheet" do
-    get "/assets/app.css"
+    get "/assets/main.css"
     expect(last_response.body).to include("normalize")
   end
 
   it "loads base stylesheet" do
-    get "/assets/app.css"
+    get "/assets/main.css"
     expect(last_response.body).to include(".browserupgrade")
   end
 
   it "compresses css" do
-    get "/assets/app.css"
+    get "/assets/main.css"
     expect(last_response.body.count("\n")).to eq(1)
   end
 

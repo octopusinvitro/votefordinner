@@ -1,7 +1,5 @@
 module VoteAssets
 
-  # require "sass"
-
   def self.included (klass)
     environment = Sprockets::Environment.new klass.settings.root
     environment.append_path "../assets/css/"
