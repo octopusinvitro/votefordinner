@@ -20,4 +20,9 @@ describe 'VoteAssets' do
     expect(last_response.body).to include('.browserupgrade')
   end
 
+  it 'compresses css' do
+    get '/assets/app.css'
+    expect(last_response.body.count("\n")).to eq(1)
+  end
+
 end
