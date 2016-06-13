@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'sprockets'
 
 group :test do
   gem 'rake'

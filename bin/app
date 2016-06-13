@@ -3,8 +3,11 @@
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
 require 'sinatra'
-require 'messages'
-include Messages
+require 'sprockets'
 
+require 'messages'
+require 'vote_assets'
 require 'vote'
+
+include Messages
 Vote.run!

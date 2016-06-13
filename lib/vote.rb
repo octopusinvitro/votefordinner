@@ -1,10 +1,10 @@
-require 'sinatra'
 require 'yaml/store'
 
 class Vote < Sinatra::Base
 
-  set :views,  "#{settings.root}/../views"
+  include VoteAssets
   Choices = Messages::CHOICES
+  set :views, "#{settings.root}/../views"
 
   get '/' do
     @title = Messages::MAIN_TITLE
@@ -31,8 +31,5 @@ class Vote < Sinatra::Base
     @votes = @store.transaction { @store['votes'] }
     erb :results
   end
-  # get '/assets' do
-  #   run VoteAssets.environment Sinatra::Application.settings.root
-  # end
 
 end

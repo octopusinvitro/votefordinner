@@ -1,8 +1,6 @@
 require 'vote'
 
 describe 'Vote' do
-  include Rack::Test::Methods
-
   def app
     Vote.new
   end
