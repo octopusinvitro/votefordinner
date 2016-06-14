@@ -1,0 +1,110 @@
+.cast {
+  text-transform: uppercase;
+  letter-spacing: .3em;
+}
+
+/*******************
+    INPUT RADIO
+ *******************/
+.radio-label {
+  position: relative;
+  display: block;
+  min-height: 2.5em;
+  line-height: 2.5;
+  text-indent: 1em;
+}
+
+.radio-label::before,
+.radio-label::after {
+  position: absolute;
+  left: -2em;
+  height: 1.5em;
+  line-height: 1.5em;
+}
+
+.radio-label::before {
+  content: "✗";
+  color: #d22d2d;
+  font-size: .9em;
+  text-indent: .2em;
+
+  top:    25%;
+  width:  2.5em;
+  background-color: #f77f7f;
+  // border: .2em solid #f77f7f;
+  border-radius: .8em;
+  transition: content 0.3s, text-indent 0.3s;
+}
+
+.radio-label::after {
+  top:    25%;
+  width:  .6em;
+  margin-left: 1em;
+  background-color: #d22d2d;
+  border-radius: 50%;
+  // z-index: 10;
+  transition: margin-left 0.3s;
+}
+
+input.visuallyhidden:checked ~ .radio-label::before {
+  content: "✓";
+  text-indent: 1.5em;
+}
+
+input.visuallyhidden:checked ~ .radio-label::after {
+  margin-left: 0;
+}
+
+/*******************
+      BUTTONS
+ *******************/
+.button,
+.button__img,
+.button__text {
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.button {
+  position: relative;
+  padding: .5em 1em;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: #fff;
+  background-color: #d22d2d;
+  box-shadow: 0 .3em #c11c1c;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: none;
+  transform: translateY(.3em);
+}
+
+.button__img {
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+.button:hover .button__img {
+  transform: scale(4);
+  }
+
+.button__img svg {
+  margin: .2em;
+  width: 1em;
+  height: 1em;
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 1em;
+  opacity: 1;
+  transition: fill 0.3s, stroke 0.3s, opacity 0.3s;
+}
+
+.button:hover .button__img svg {
+  fill: #fff;
+  stroke: transparent;
+  opacity: 0;
+}

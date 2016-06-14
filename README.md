@@ -6,6 +6,8 @@
 
 A project to play with Sinatra.
 
+![Screenshot](screenshot.png)
+
 
 ## How to use this project
 
@@ -101,6 +103,12 @@ I think it is clearer and more explicit that having to search for requires insid
 
 * All the texts are in a `lib/messages.rb` file. Maybe that make it easier for translations? Also separates the strings from the business logic.
 
+
+## Todo
+
+* [ ] Make Sinatra use sass with sprokets (apparently another gem has to be added, `sprockets-sass`, which is stupid, because sass can do sass things! I may drop sprockets)
+* [ ] Fix the radio buttons, for some reason the `:after` pseudo-element is not showing.
+* [x] Find out why the cast page container is wider than the other pages.
 
 ## License
 
