@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/octopusinvitro/voting.svg?branch=master)](https://travis-ci.org/octopusinvitro/voting)
 [![build status](https://gitlab.com/me-stevens/voting/badges/master/build.svg)](https://gitlab.com/me-stevens/voting/commits/master)
-
+[![Code Climate](https://codeclimate.com/github/octopusinvitro/voting/badges/gpa.svg)](https://codeclimate.com/github/octopusinvitro/voting)
 
 # Readme
 
@@ -109,6 +109,8 @@ I think it is clearer and more explicit that having to search for requires insid
 * [ ] Make Sinatra use sass with sprokets (apparently another gem has to be added, `sprockets-sass`, which is stupid, because sass can do sass things! I may drop sprockets)
 * [ ] Fix the radio buttons, for some reason the `:after` pseudo-element is not showing.
 * [x] Find out why the cast page container is wider than the other pages.
+* [ ] Extract the yaml from the main class.
+
 
 ## License
 

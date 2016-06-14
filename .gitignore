@@ -54,3 +54,4 @@ build-iPhoneSimulator/
 
 views/*svg
 votes.yml
+codeclimate-config.patch
