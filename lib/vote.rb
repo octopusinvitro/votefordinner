@@ -32,4 +32,10 @@ class Vote < Sinatra::Base
     erb :results
   end
 
+  not_found do
+    status 404
+    @title = Messages::NOT_FOUND
+    erb :not_found
+  end
+
 end

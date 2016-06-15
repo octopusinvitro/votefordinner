@@ -27,6 +27,12 @@ describe "Vote" do
     # expect(last_response.body).to include("<td>###</td>")
   end
 
+  it "renders the error page if there is an error" do
+    get '/unknown_path'
+    expect(last_response.status).to eq(404)
+    expect_titles(Messages::NOT_FOUND)
+  end
+
   def expect_titles(title)
     expect(last_response.body).to include("<title>#{title}</title>")
     expect(last_response.body).to include("<h1>#{title}</h1>")
