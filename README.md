@@ -4,7 +4,7 @@
 
 # Readme
 
-A project to play with Sinatra.
+A project to play with Sinatra. You can visit the app at [https://votefordinner.herokuapp.com/](https://votefordinner.herokuapp.com/).
 
 ![Screenshot](screenshot.png)
 
@@ -89,6 +89,24 @@ $ rackup
 ```
 
 Open your browser and go to http://localhost:9292/
+
+
+## Heroku
+
+Login to your Heroku account:
+
+```bash
+$ heroku login
+```
+
+Deploy:
+
+```sh
+$ heroku create votefordinner
+$ git push heroku master
+$ heroku run rake db:migrate
+$ heroku open
+```
 
 
 ## Comments
