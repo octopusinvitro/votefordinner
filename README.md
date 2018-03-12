@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/octopusinvitro/voting.svg?branch=master)](https://travis-ci.org/octopusinvitro/voting)
-[![build status](https://gitlab.com/me-stevens/voting/badges/master/build.svg)](https://gitlab.com/me-stevens/voting/commits/master)
-[![Code Climate](https://codeclimate.com/github/octopusinvitro/voting/badges/gpa.svg)](https://codeclimate.com/github/octopusinvitro/voting)
+[![Build Status](https://travis-ci.org/octopusinvitro/votefordinner.svg?branch=master)](https://travis-ci.org/octopusinvitro/votefordinner)
+[![build status](https://gitlab.com/octopusinvitro/votefordinner/badges/master/build.svg)](https://gitlab.com/octopusinvitro/votefordinner/commits/master)
+[![Code Climate](https://codeclimate.com/github/octopusinvitro/votefordinner/badges/gpa.svg)](https://codeclimate.com/github/octopusinvitro/votefordinner)
 
 # Readme
 
@@ -103,17 +103,13 @@ Deploy:
 
 ```sh
 $ heroku create votefordinner
+$ git remote add heroku git@heroku.com:votefordinner.git
 $ git push heroku master
-$ heroku run rake db:migrate
 $ heroku open
 ```
 
 
 ## Comments
-
-* I don't know if this is a good practice, but I am moving all the requires to the `bin/app` file (and the `config.ru` file, in case you use that to run the app).
-Then, to make it work for the tests, I also put them in the `spec/spec_helper`.
-I think it is clearer and more explicit that having to search for requires inside files and maybe end up with duplication (like requiring the same file in different files, etc.)
 
 * I have to add the modules in the `config.ru` with `extend` because `include` throws an error. It works in `bin/app`, though.
 
