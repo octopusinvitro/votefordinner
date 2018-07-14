@@ -1,9 +1,10 @@
-require "sinatra"
-require "sprockets"
+# frozen_string_literal: true
 
-require "./lib/messages"
-require "./lib/vote_assets"
-require "./lib/vote"
+require 'sinatra'
+require 'sprockets'
 
-extend Messages
+require './lib/messages'
+require './lib/vote_assets'
+require './lib/vote'
+
 run Vote

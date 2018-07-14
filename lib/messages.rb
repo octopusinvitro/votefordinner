@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Messages
   MAIN_TITLE    = 'Choose a dish!'
   CAST_TITLE    = 'Thanks!'
@@ -7,6 +9,6 @@ module Messages
     'HAM' => 'Hamburger',
     'PIZ' => 'Pizza',
     'CUR' => 'Curry',
-    'NOO' => 'Noodles',
-  }
+    'NOO' => 'Noodles'
+  }.freeze
 end
