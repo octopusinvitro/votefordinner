@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require 'yaml/store'
+
 require_relative 'messages'
+require_relative 'vote_assets'
 
 class Vote < Sinatra::Base
   include VoteAssets

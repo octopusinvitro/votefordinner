@@ -112,10 +112,6 @@ $ heroku open
 
 ## Comments
 
-* I have to add the modules in the `config.ru` with `extend` because `include` throws an error. It works in `bin/app`, though.
-
-* The assets module has to be included inside of a class or it won't work. That's because of the `included` method, which takes the class as an argument.
-
 * All the texts are in a `lib/messages.rb` file. Maybe that make it easier for translations? Also separates the strings from the business logic.
 
 
