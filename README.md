@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/octopusinvitro/votefordinner.svg?branch=master)](https://travis-ci.org/octopusinvitro/votefordinner)
 [![build status](https://gitlab.com/octopusinvitro/votefordinner/badges/master/build.svg)](https://gitlab.com/octopusinvitro/votefordinner/commits/master)
+[![Dependency status](https://badges.depfu.com/badges/c575060ba5bcaf9cd11a77b139616753/overview.svg)](https://depfu.com/github/octopusinvitro/votefordinner?project=Bundler)
 [![Code Climate](https://codeclimate.com/github/octopusinvitro/votefordinner/badges/gpa.svg)](https://codeclimate.com/github/octopusinvitro/votefordinner)
 
 # Readme
@@ -124,6 +125,7 @@ $ heroku open
 * [ ] Fix the radio buttons, for some reason the `:after` pseudo-element is not showing.
 * [x] Find out why the cast page container is wider than the other pages.
 * [ ] Extract the yaml from the main class.
+* [ ] Extract the svg's into partials.
 
 
 ## License

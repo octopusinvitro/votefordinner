@@ -7,8 +7,8 @@ module VoteAssets
     klass.set :environment, environment
 
     # compress assets
-    # environment.js_compressor  = :uglify
     environment.css_compressor = :scss
+    # environment.js_compressor  = :uglify
 
     klass.get "/assets/*" do
       env["PATH_INFO"].sub!("/assets", "")
