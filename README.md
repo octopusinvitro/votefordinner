@@ -58,7 +58,7 @@ $ bundle exec rspec --color
 ```
 
 
-### Another way of running them
+### To run the tests and rubocop
 
 ```bash
 $ bundle exec rake
@@ -86,7 +86,7 @@ Open your browser and go to http://localhost:4567/
 Update the `config.ru` file, then type
 
 ```bash
-$ rackup
+$ bundle exec rackup
 ```
 
 Open your browser and go to http://localhost:9292/
@@ -103,16 +103,11 @@ $ heroku login
 Deploy:
 
 ```sh
-$ heroku create votefordinner
+$ heroku create votefordinner # first deploy only
 $ git remote add heroku git@heroku.com:votefordinner.git
 $ git push heroku master
 $ heroku open
 ```
-
-
-## Comments
-
-* All the texts are in a `lib/messages.rb` file. Maybe that make it easier for translations? Also separates the strings from the business logic.
 
 
 ## Todo
