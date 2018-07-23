@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 ruby '2.5.1'
 
-gem 'sass', '~> 3.4', '>= 3.4.22'
+gem 'sassc'
 gem 'sinatra'
 gem 'sprockets'
 
