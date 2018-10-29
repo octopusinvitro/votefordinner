@@ -1,16 +1,17 @@
 # frozen_string_literal: true
 
+require 'sassc'
+require 'sinatra'
 require 'yaml/store'
 
 require_relative 'messages'
-require_relative 'vote_assets'
 
 class Vote < Sinatra::Base
-  include VoteAssets
   include Messages
-
   Choices = Messages::CHOICES
+
   set :views, "#{settings.root}/../views"
+  set :sass_dir, "#{settings.root}/../assets/css"
 
   get '/' do
     @title = Messages::MAIN_TITLE
@@ -37,6 +38,14 @@ class Vote < Sinatra::Base
     @votes = @store.transaction { @store['votes'] }
     erb :results
   end
+
+  get '/assets/main.css' do
+    content_type 'text/css', charset: 'utf-8'
+    template = File.read(File.join(settings.sass_dir, 'main.scss'))
+    SassC::Engine.new(template, style: :compact).render
+    # sass(:main, style: :compact)
+  end
+
 
   not_found do
     status 404

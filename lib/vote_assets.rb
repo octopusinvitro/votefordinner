@@ -1,19 +1,17 @@
 # frozen_string_literal: true
+require 'sassc'
 
 module VoteAssets
   def self.included(klass)
-    environment = Sprockets::Environment.new klass.settings.root
-    environment.append_path '../assets/css/'
-    environment.append_path '../assets/js/'
-    klass.set :environment, environment
+    # configure do
+    #   set :sass, style: :compressed
+    # end
+    # binding.pry
+    # SassC::Engine.new(File.read('assets/css/main.scss'), style: :compressed).render
 
-    # compress assets
-    environment.css_compressor = :scss
-    # environment.js_compressor  = :uglify
-
-    klass.get '/assets/*' do
-      env['PATH_INFO'].sub!('/assets', '')
-      klass.settings.environment.call(env)
-    end
+    # klass.get '/assets/*' do
+    #   env['PATH_INFO'].sub!('/assets', '')
+    #   klass.settings.environment.call(env)
+    # end
   end
 end

@@ -3,7 +3,6 @@
 ENV['RACK_ENV'] = 'test'
 require 'sinatra'
 require 'rack/test'
-require 'sprockets'
 
 require 'coveralls'
 Coveralls.wear!

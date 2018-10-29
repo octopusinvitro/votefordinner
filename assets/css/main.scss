@@ -1,6 +1,6 @@
-//= require normalize
-//= require base
-//= require layout
-//= require components
-//= require mediaqueries
-//= require print
+@import 'normalize';
+@import 'base';
+@import 'layout';
+@import 'components';
+@import 'mediaqueries';
+@import 'print';

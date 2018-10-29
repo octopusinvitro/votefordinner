@@ -3,9 +3,8 @@
 source 'https://rubygems.org'
 ruby '2.5.1'
 
-gem 'sassc'
+gem 'sassc', '~> 1.11'
 gem 'sinatra'
-gem 'sprockets'
 
 group :test do
   gem 'coveralls', require: false
